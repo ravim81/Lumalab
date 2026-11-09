@@ -11,11 +11,11 @@
 - [x] Asset sourcing, licensing and optimisation policy.
 - [x] QA and deployment plan.
 - [x] Independent verification of DoF, FOV and exposure golden fixture values (EV100 corrected to 9.936637939 for f/2.8, 1/125 s, ISO 100).
-- [ ] Competitor review with current feature/pricing/license evidence.
-- [ ] Actual asset candidate shortlist with license evidence and performance checks.
+- [x] Competitor review completed against current public product pages; claims and differentiation documented.
+- [x] Asset candidate shortlist researched with source/license references; binary inspection and final production approval remain open.
 - [x] Cloudflare account inspected; no LumaLab Worker exists yet, so deployment target remains to be created after app scaffold.
 - [ ] Final name/domain/trademark screening.
-- [ ] Phase 0 acceptance review and approval.
+- [ ] Final asset binary inspection and manifest approval.\n- [ ] Phase 0 acceptance review and approval.
 
 ## Phase 0 exit criteria
 Every open item above must be completed or explicitly marked as a deferred decision with rationale. No production UI/engine implementation begins until the spec gate is closed. Documentation commits are allowed during Phase 0.
