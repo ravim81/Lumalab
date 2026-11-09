@@ -10,10 +10,10 @@
 - [x] Optical golden/property test specification.
 - [x] Asset sourcing, licensing and optimisation policy.
 - [x] QA and deployment plan.
-- [ ] Independent verification of all optical golden fixture values.
+- [x] Independent verification of DoF, FOV and exposure golden fixture values (EV100 corrected to 9.936637939 for f/2.8, 1/125 s, ISO 100).
 - [ ] Competitor review with current feature/pricing/license evidence.
 - [ ] Actual asset candidate shortlist with license evidence and performance checks.
-- [ ] Cloudflare account/project and deployment target inspection.
+- [x] Cloudflare account inspected; no LumaLab Worker exists yet, so deployment target remains to be created after app scaffold.
 - [ ] Final name/domain/trademark screening.
 - [ ] Phase 0 acceptance review and approval.
 
