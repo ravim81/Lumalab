@@ -1,0 +1,36 @@
+# Phase 0 — Specification and Readiness Gate
+
+## Deliverables
+- [x] Repository identity confirmed: `ravim81/Lumalab` (empty at discovery).
+- [x] Product requirements and MVP boundaries.
+- [x] Brand direction: premium camera precision + futuristic creative technology.
+- [x] Initial design system and responsive studio interaction rules.
+- [x] Architecture and package boundaries.
+- [x] Optical equations and unit conventions documented.
+- [x] Optical golden/property test specification.
+- [x] Asset sourcing, licensing and optimisation policy.
+- [x] QA and deployment plan.
+- [x] Independent verification of DoF, FOV and exposure golden fixture values (EV100 corrected to 9.936637939 for f/2.8, 1/125 s, ISO 100).
+- [x] Competitor review completed against current public product pages; claims and differentiation documented.
+- [x] Asset candidate shortlist researched with source/license references; binary inspection and final production approval remain open.
+- [x] Cloudflare account inspected; no LumaLab Worker exists yet, so deployment target remains to be created after app scaffold.
+- [ ] Final name/domain/trademark screening.
+- [ ] Final asset binary inspection and manifest approval.\n- [ ] Phase 0 acceptance review and approval.
+
+## Phase 0 exit criteria
+Every open item above must be completed or explicitly marked as a deferred decision with rationale. No production UI/engine implementation begins until the spec gate is closed. Documentation commits are allowed during Phase 0.
+
+## Phase 1 — Optical foundation
+1. Set up workspace, strict TypeScript, lint/typecheck/test/build scripts.
+2. Implement shared domain types and versioned experiment schema.
+3. Implement P0 optics and exposure functions as pure packages.
+4. Add golden, property, boundary and unit-conversion tests.
+5. Build a minimal technical verification screen (not the full 3D studio).
+6. Review numerical outputs and limitations.
+7. Gate: all P0 tests pass and calculations remain independent of UI/Three.js.
+
+## Later phases
+- Phase 2: 3D camera studio foundation and camera/lens positioning.
+- Phase 3: lighting, capture and A/B comparison.
+- Phase 4: scenario library and local project workspace.
+- Phase 5: learning/challenges and computational photography.
