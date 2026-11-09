@@ -15,7 +15,7 @@ All functions are deterministic, pure, typed, unit-explicit and independent of U
 ## Golden fixtures
 1. DoF: f=50 mm, N=2.8, focus=3000 mm, CoC=0.03 mm. Expected hyperfocal ≈ 29,811.9047619 mm; near ≈ 2,729.869186 mm; far ≈ 3,329.462861 mm; total ≈ 599.593676 mm. Verify using an independent high-precision calculation before locking fixture constants.
 2. FOV: sensor 36 × 24 mm, lens 50 mm. Expected horizontal ≈ 39.60°, vertical ≈ 26.99°, diagonal ≈ 46.79°.
-3. Exposure: f/2.8, 1/125 s, ISO 100 gives EV100 ≈ 12.27. Changing to 1/250 s at same aperture and ISO changes EV100 by +1 stop.
+3. Exposure: f/2.8, 1/125 s, ISO 100 gives EV100 ≈ 9.936637939 (≈ 9.94). Changing to 1/250 s at same aperture and ISO changes EV100 by +1 stop.
 
 ## Property tests
 - Increasing f-number (smaller aperture) increases DoF for fixed scene inputs.
