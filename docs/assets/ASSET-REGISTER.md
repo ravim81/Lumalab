@@ -26,5 +26,16 @@ Do not use a model just because it is downloadable or visible in a preview. Veri
 ## Technical validation
 Record polygon count, material count, texture dimensions/formats, file size, scale, forward axis, origin/pivot, LOD availability, compression, mobile test result and visual QA result. Optimise only after retaining source provenance. Never overwrite the source asset.
 
+## Candidate shortlist (not yet production-approved)
+| Need | Candidate/source | License evidence | Decision |
+|---|---|---|---|
+| Camera body | [Prism Frame DSLR Camera — Innerscene](https://www.innerscene.com/tools/library/3d-parts/prism-frame-dslr-camera-8e3035ed) | Search-indexed source listing identifies original model as CC0, GLB, ~310 KB and ~11k triangles | Strong first candidate; download, inspect mesh/materials/pivots and retain source evidence before approval |
+| Alternate camera body | [Camera GLB — Grab3D](https://grab3d.com/models/electronics/camera/) | Listing identifies CC0, GLB, 18,428 triangles, 2K textures, ~1.4 MB | Backup candidate; compare visual fidelity and geometry before choosing |
+| Studio HDRI / environment | [Poly Haven](https://polyhaven.com/) | Official license page states all HDRIs, textures and models are CC0 and usable commercially without attribution | Preferred source for HDRI and environment assets |
+| PBR surface materials | [ambientCG](https://ambientcg.com/) | Publisher listing identifies CC0-1.0 | Preferred source for floor, wall, backdrop and material maps; verify each asset page |
+| Modular utility props | [Kenney](https://kenney.nl/assets) | Official support page states game assets are public domain CC0, including commercial use | Use only where the stylised look fits; not for hero camera/optical hardware |
+
 ## Status
-No third-party asset is marked approved in this initial register. Each candidate must be researched and individually verified before being added to the production asset manifest. If no suitable permissively licensed asset exists, use a clearly documented replacement plan or commission/create an original asset.
+This is a researched shortlist, not a blanket approval of every asset on these sites. The camera candidates require an actual download and technical inspection before production use. For each selected file, capture the exact asset page, license text, download URL, retrieval date, file hash, polygon/material/texture metrics, scale, pivots and mobile render result. Poly Haven's official license page is https://polyhaven.com/license. Do not reuse source-site preview renders as product content unless separately licensed.
+
+If a hero camera model does not meet the realism and interaction requirements, use a permissively licensed base model only as a visual placeholder and plan an original camera/lens assembly rather than compromising the simulator.
