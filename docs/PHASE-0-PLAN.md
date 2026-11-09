@@ -1,7 +1,7 @@
 # Phase 0 — Specification and Readiness Gate
 
 ## Deliverables
-- [x] Repository identity confirmed: `ravim81/Lumalab` (empty at discovery).
+- [x] Repository identity confirmed: ravim81/Lumalab (working repository).
 - [x] Product requirements and MVP boundaries.
 - [x] Brand direction: premium camera precision + futuristic creative technology.
 - [x] Initial design system and responsive studio interaction rules.
@@ -10,15 +10,27 @@
 - [x] Optical golden/property test specification.
 - [x] Asset sourcing, licensing and optimisation policy.
 - [x] QA and deployment plan.
-- [x] Independent verification of DoF, FOV and exposure golden fixture values (EV100 corrected to 9.936637939 for f/2.8, 1/125 s, ISO 100).
-- [x] Competitor review completed against current public product pages; claims and differentiation documented.
-- [x] Asset candidate shortlist researched with source/license references; binary inspection and final production approval remain open.
+- [x] Independent verification of DoF, FOV and exposure fixtures (EV100 corrected to 9.936637939 for f/2.8, 1/125 s, ISO 100).
+- [x] Competitor review completed against public product pages; claims and differentiation documented.
+- [x] Asset candidate shortlist researched with source/license references.
 - [x] Cloudflare account inspected; no LumaLab Worker exists yet, so deployment target remains to be created after app scaffold.
-- [ ] Final name/domain/trademark screening.
-- [ ] Final asset binary inspection and manifest approval.\n- [ ] Phase 0 acceptance review and approval.
+- [ ] Download and inspect exact camera GLB and studio HDRI binaries; verify provider checksums; calculate SHA-256; parse geometry, materials, texture payloads, transforms, scale and pivots; visually review and run mobile rendering QA.
+- [ ] Produce and commit asset manifest and inspection report; approve or reject each candidate.
+- [ ] Complete India trademark registry search (classes 9, 41 and 42), WIPO and target-market trademark searches, company/app-store/domain/common-law screening, and professional legal review.
+- [ ] Select a distinctive public product name only after clearance; LumaLab remains a provisional internal repository identifier.
+- [ ] Final Phase 0 acceptance review and approval.
+
+## Current gate decision — 2026-11-09
+**Phase 0 is NOT accepted. Phase 1 implementation is not authorised by this gate.**
+
+Two blockers remain:
+1. Asset binary inspection has not been completed. Candidate-source and license research is not equivalent to inspecting the actual files.
+2. The LumaLab name has a material collision signal: a live/pending LUMA LAB international application was found for another owner with software/education-related services in the US. This does not establish infringement or determine Indian rights, but it is sufficient to withhold public-name approval pending official registry and professional review.
+
+The Poly Haven API documents direct download URLs, file sizes and checksums, and its assets are CC0. This supports the retrieval plan but does not verify the candidate binaries themselves. References: https://polyhaven.com/our-api and https://polyhaven.com/license.
 
 ## Phase 0 exit criteria
-Every open item above must be completed or explicitly marked as a deferred decision with rationale. No production UI/engine implementation begins until the spec gate is closed. Documentation commits are allowed during Phase 0.
+Every open item above must be completed or explicitly deferred with rationale and owner. No production UI/engine implementation begins until the spec gate is closed. Documentation commits are allowed during Phase 0.
 
 ## Phase 1 — Optical foundation
 1. Set up workspace, strict TypeScript, lint/typecheck/test/build scripts.
