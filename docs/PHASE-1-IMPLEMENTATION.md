@@ -1,17 +1,23 @@
 # Phase 1 — Optical Foundation
-## Implemented in this branch
-- Strict TypeScript workspace and React/Vite technical verification app.
-- UI-independent pure optics package: FOV (horizontal/vertical/diagonal), crop factor, hyperfocal distance, near/far DoF, entrance pupil, EV100, ISO-adjusted scene EV and exposure compensation.
-- Physical input validation, explicit infinity, golden fixtures and monotonicity tests.
-- Editable technical verification screen.
-## Engineering rules
+
+## Implemented
+- Strict TypeScript workspace and React/Vite technical verification application.
+- UI-independent pure optics package: horizontal/vertical/diagonal sensor FOV, crop factor, hyperfocal distance, near/far DoF, entrance pupil, EV100, ISO-adjusted scene EV and exposure compensation.
+- Physical input validation, explicit infinity handling and golden reference fixtures.
+- Desktop and mobile Chromium smoke tests: app rendering, interactive focal-length change, and horizontal overflow check.
+- GitHub Actions checks for install, unit tests, strict project typecheck/build, production bundle and browser tests.
+
+## Model conventions and limits
 - Internal lengths are millimetres; shutter time is seconds; FOV is returned in degrees at the presentation boundary.
-- Thin-lens DoF requires focus distance greater than focal length and exposes the chosen CoC.
+- Thin-lens DoF requires focus distance greater than focal length. With the exact focal-length correction in the selected formula, the far limit tends to infinity at the H + f threshold; the API reports infinity explicitly.
 - Domain package imports no React, Three.js or browser APIs.
-- R3F is deliberately deferred: Phase 1 validates the optical foundation, not the 3D studio. Stable R3F v9 pairs with React 19; v10 remains alpha in current docs. See https://r3f.docs.pmnd.rs/getting-started/installation.
-## Deferred risks
-- Phase 0 camera/HDRI binary inspection and final trademark clearance remain open. No third-party assets are bundled and LumaLab remains a working name.
-- No pupil magnification, lens profiles, distortion, aberrations, focus breathing or ray tracing.
-- EV is an exposure index, not scene luminance metering.
+- This numerical model is not a ray-traced physical lens; EV is an exposure index, not scene luminance metering.
+
 ## Verification
-- Vitest test suite is authored. This connected GitHub editing environment cannot run npm install/test/build against a checked-out working tree; local/CI execution is required before merge. Do not mark release-ready until typecheck, tests, production build and browser QA pass.
+- The Phase 1 GitHub Actions run completed successfully for npm install, npm test, npm run typecheck and npm run build.
+- The browser smoke suite is now included in CI and must complete successfully before merge.
+- Manual cross-browser visual QA beyond Chromium automation remains a release check; no claim of exhaustive Safari/Firefox/device testing is made.
+
+## Deferred
+- 3D camera studio, lighting/capture renderer, camera/lens asset integration, sensor simulation and image processing are later phases.
+- Phase 0 asset binary inspection and formal brand clearance remain separate release gates. No unverified third-party assets are bundled; LumaLab remains a working name.
