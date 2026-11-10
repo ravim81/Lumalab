@@ -27,7 +27,7 @@ export default function App() {
    </aside>
    <div className="results">{!data.ok?<div className="panel error" role="alert">{data.error}</div>:<>
     <section className="panel"><div className="section-head"><div><small>03 / FIELD OF VIEW</small><h2>Frame geometry</h2></div><b className="blue-tag">LIVE MODEL</b></div>
-     <div className="frame-stage"><div className="frame"><span>36 × 24</span><strong>{fmt(data.fov!.horizontalDegrees,1)}°</strong></div><small>FULL-FRAME SENSOR / 50 MM REFERENCE</small></div>
+     <div className="frame-stage"><div className="frame"><span>36 × 24</span><strong>{fmt(data.fov!.horizontalDegrees,1)}°</strong></div><small>FULL-FRAME SENSOR / {focal} MM LENS</small></div>
      <div className="metrics three"><Metric label="Horizontal" value={fmt(data.fov!.horizontalDegrees)+"°"}/><Metric label="Vertical" value={fmt(data.fov!.verticalDegrees)+"°"}/><Metric label="Diagonal" value={fmt(data.fov!.diagonalDegrees)+"°"}/></div>
     </section>
     <section className="panel"><div className="section-head"><div><small>04 / FOCUS</small><h2>Depth of field</h2></div><b>THIN LENS</b></div>
