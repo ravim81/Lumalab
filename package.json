@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm --workspace @lumalab/web run dev",
+    "dev": "npm --workspace @lumalab/optics-engine run build && npm --workspace @lumalab/web run dev",
     "build": "npm run typecheck && npm --workspace @lumalab/web run build",
     "typecheck": "tsc -b",
     "test": "vitest run",
