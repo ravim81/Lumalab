@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { calculateDepthOfField, calculateExposure, calculateFieldOfView, calculateEntrancePupilDiameter } from "@lumalab/optics-engine";
 
-type FieldProps = { label: string; value: number; unit: string; min?: number; step?: number; onChange: (value: number) => void };
+type FieldProps = { label: string; value: number; unit: string; min?: number; step?: number | "any"; onChange: (value: number) => void };
 function Field({label,value,unit,min=0.001,step="any",onChange}:FieldProps) {
  return <label className="field"><span>{label}</span><div className="input-wrap"><input type="number" min={min} step={step} value={value} onChange={e=>onChange(Number(e.target.value))}/><small>{unit}</small></div></label>;
 }
