@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@lumalab/optics-engine": "0.1.0",
