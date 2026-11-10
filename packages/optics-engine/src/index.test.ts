@@ -15,7 +15,7 @@ describe("depth of field",()=>{
 describe("exposure",()=>{
  it("matches corrected EV100",()=>expect(calculateExposure({fNumber:2.8,shutterSeconds:1/125,iso:100}).ev100).toBeCloseTo(9.936637939,8));
  it("adjusts scene EV by one stop at double ISO",()=>{const a=calculateExposure({fNumber:4,shutterSeconds:1/125,iso:100}),b=calculateExposure({fNumber:4,shutterSeconds:1/125,iso:200});expect(b.sceneEv).toBeCloseTo(a.sceneEv-1,10);});
- it("recognizes equivalent exposures",()=>{const a={fNumber:2,shutterSeconds:1/125,iso:100},b={fNumber:4,shutterSeconds:1/500,iso:100};expect(calculateExposureCompensationStops(a,b)).toBeCloseTo(0,2);});
+ it("recognizes equivalent exposures",()=>{const a={fNumber:2,shutterSeconds:1/125,iso:100},b={fNumber:4,shutterSeconds:1/31.25,iso:100};expect(calculateExposureCompensationStops(a,b)).toBeCloseTo(0,2);});
 });
 describe("entrance pupil and validation",()=>{
  it("calculates pupil diameter",()=>expect(calculateEntrancePupilDiameter(50,2)).toBe(25));
