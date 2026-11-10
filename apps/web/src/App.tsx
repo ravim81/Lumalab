@@ -9,7 +9,7 @@ function Metric({label,value}:{label:string;value:string}) { return <div classNa
 const sensor={widthMm:36,heightMm:24};
 export default function App() {
  const [focal,setFocal]=useState(50),[aperture,setAperture]=useState(2.8),[focus,setFocus]=useState(3000),[coc,setCoc]=useState(0.03),[shutter,setShutter]=useState(1/125),[iso,setIso]=useState(100);
- const data=useMemo(()=>{try{return {error:"",fov:calculateFieldOfView(sensor,focal),dof:calculateDepthOfField({focalLengthMm:focal,fNumber:aperture,focusDistanceMm:focus,circleOfConfusionMm:coc}),ev:calculateExposure({fNumber:aperture,shutterSeconds:shutter,iso}),pupil:calculateEntrancePupilDiameter(focal,aperture)}}catch(e){return {error:e instanceof Error?e.message:"Invalid input"}}},[focal,aperture,focus,coc,shutter,iso]);
+ const data=useMemo(()=>{try{return {ok:true as const,fov:calculateFieldOfView(sensor,focal),dof:calculateDepthOfField({focalLengthMm:focal,fNumber:aperture,focusDistanceMm:focus,circleOfConfusionMm:coc}),ev:calculateExposure({fNumber:aperture,shutterSeconds:shutter,iso}),pupil:calculateEntrancePupilDiameter(focal,aperture)}}catch(e){return {ok:false as const,error:e instanceof Error?e.message:"Invalid input"}}},[focal,aperture,focus,coc,shutter,iso]);
  const fmt=(n:number,d=2)=>Number.isFinite(n)?n.toLocaleString(undefined,{maximumFractionDigits:d}):"∞";
  return <main className="page">
   <header><a className="brand" href="#"><span>◉</span> LUMALAB</a><span className="mono muted">OPTICAL FOUNDATION / 01</span><span className="online"><i/> ENGINE ONLINE</span></header>
@@ -25,7 +25,7 @@ export default function App() {
     <Field label="ISO" value={iso} unit="ISO" min={1} step={50} onChange={setIso}/>
     <p className="note">Thin-lens model · 36 × 24 mm sensor. CoC is an explicit assumption, not a universal sharpness threshold.</p>
    </aside>
-   <div className="results">{data.error?<div className="panel error" role="alert">{data.error}</div>:<>
+   <div className="results">{!data.ok?<div className="panel error" role="alert">{data.error}</div>:<>
     <section className="panel"><div className="section-head"><div><small>03 / FIELD OF VIEW</small><h2>Frame geometry</h2></div><b className="blue-tag">LIVE MODEL</b></div>
      <div className="frame-stage"><div className="frame"><span>36 × 24</span><strong>{fmt(data.fov!.horizontalDegrees,1)}°</strong></div><small>FULL-FRAME SENSOR / 50 MM REFERENCE</small></div>
      <div className="metrics three"><Metric label="Horizontal" value={fmt(data.fov!.horizontalDegrees)+"°"}/><Metric label="Vertical" value={fmt(data.fov!.verticalDegrees)+"°"}/><Metric label="Diagonal" value={fmt(data.fov!.diagonalDegrees)+"°"}/></div>
