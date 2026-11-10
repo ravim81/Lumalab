@@ -46,3 +46,7 @@ Every open item above must be completed or explicitly deferred with rationale an
 - Phase 3: lighting, capture and A/B comparison.
 - Phase 4: scenario library and local project workspace.
 - Phase 5: learning/challenges and computational photography.
+
+
+## Phase 1 authorization note
+Phase 1 implementation was started in a separate feature branch following the user's explicit request. This is a controlled progression of the numerical engine and verification UI only; it does not constitute Phase 0 acceptance. The asset-binary and brand-clearance gates remain release blockers for the later 3D studio and public product launch. No unverified assets or public brand claims are included.
